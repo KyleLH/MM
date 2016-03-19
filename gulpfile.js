@@ -1,7 +1,8 @@
 var jshint = require("gulp-jshint");
-var gulp = require("gulp");
 var scsslint = require("gulp-scss-lint");
+var gulp = require("gulp");
 var scss = require("gulp-scss");
+var nodemon = require("gulp-nodemon");
 
 var paths = {
   js: "./public/assets/js/**/*.js",
@@ -25,10 +26,18 @@ gulp.task("scss", function () {
     .pipe(gulp.dest("./public/assets/css"));
 });
 
-gulp.task("watch", function () {
-  gulp.watch(paths.js, [ "lint:js" ]);
-  gulp.watch(paths.scss, [ "lint:scss", "scss" ]);
+gulp.task("lint", [ "lint:scss", "lint:js" ]);
+
+gulp.task("build", [ "scss" ]);
+
+gulp.task("nodemon", function () {
+  return nodemon({
+    script: "app.js",
+    ext: "scss js html",
+    env: { "NODE_ENV": "development" },
+    tasks: [ "lint", "build" ]
+  });
 });
 
-gulp.task("default", [ "lint:js", "lint:scss", "scss", "watch" ]);
+gulp.task("default", [ "lint:js", "lint:scss", "scss", "nodemon" ]);
 

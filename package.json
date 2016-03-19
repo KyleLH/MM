@@ -1,0 +1,23 @@
+{
+  "name": "y",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KyleLH/MM.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KyleLH/MM/issues"
+  },
+  "homepage": "https://github.com/KyleLH/MM#readme",
+  "dependencies": {
+    "express": "^4.13.4",
+    "gulp": "^3.9.1"
+  }
+}

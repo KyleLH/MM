@@ -1,5 +1,12 @@
 $black: #000;
 
+$color-1: #cff09e;
+$color-2: #a8dba8;
+$color-3: #79bd9a;
+$color-4: #3b8686;
+$color-5: #0b486b;
+
+
 body {
   box-sizing: border-box;
   font-family: Open Sans;
@@ -13,9 +20,14 @@ a:active {
   text-decoration: none;
 }
 
+header {
+  overflow: auto;
+}
+
 .header-leftside {
   float: left;
   font-family: Josefin Slab;
+  font-size: 1.6rem;
 }
 
 .header-rightside {
@@ -24,7 +36,7 @@ a:active {
 
 .header-item {
   display: inline-block;
-  padding: 10px 10px;
+  padding: 10px;
   position: relative;
   text-align: center;
   user-select: none;
@@ -51,4 +63,47 @@ a:active {
   &.header-link:hover {
     cursor: pointer;
   }
+}
+
+.section {
+  font-size: 1.2rem;
+  text-align: center;
+  width: 100%;
+
+  .welcome {
+    display: inline-block;
+  }
+}
+
+.info {
+  display: inline-block;
+  width: 83%;
+
+  .info-section {
+    display: inline-block;
+    height: 20vw;
+    margin: 40px calc(22% / 6);
+    vertical-align: top;
+    width: 20vw;
+
+    .block {
+      background-color: $color-3;
+      border-radius: 5px;
+      box-sizing: border-box;
+      height: 100%;
+      margin-top: 20px;
+      padding: 30px;
+      width: 100%;
+    }
+  }
+}
+
+.title {
+  font-family: Lora, serif;
+  font-size: 1.4rem;
+}
+
+.welcome {
+  font-size: 2.4rem;
+  margin: 80px 0;
 }
